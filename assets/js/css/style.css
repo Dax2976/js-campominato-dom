@@ -63,6 +63,11 @@ footer{
     color: white;
 }
 
+.bgboxred{
+    background-color: red;
+    color: white;
+}
+
 .diff_100{
     width: calc(100% / 10);
     height: calc(100% / 10);

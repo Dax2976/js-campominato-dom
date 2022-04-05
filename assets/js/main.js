@@ -30,10 +30,11 @@
 
 
 // creazioni variabili 
-
+//let failedBomb = []
 let btn = document.getElementById('btn')
 let grid = document.getElementById('grid')
 let selezione = document.getElementById('selezione')
+let score = 0
 // let btnReset = document.getElementById('btnReset')
 
 
@@ -56,6 +57,7 @@ function reload (){
 }
 
 
+
 // funzione per creare le celle da 100 a 81 a 49
 function createCell(){
     for(let i = 1; i <= selezione.value;i++){
@@ -63,12 +65,56 @@ function createCell(){
         content.classList.add('diff_' + selezione.value)
         content.innerHTML = i
         grid.appendChild(content)
-        content.addEventListener('click', colorCellBlue)
+        content.addEventListener('click', colorCell)
+       
     }
 }
 
 
 // funzione per colorare le celle al click
-function colorCellBlue(){
-    this.classList.add('bgboxblue')
+function colorCell(){
+    if(content !== genBomb){
+        this.classList.add('bgboxblue')
+        score++
+    } else if (this.classList.add('bgboxred')){
+        alert(`hai preso una bomba il tuo punteggio è : ${score}`)
+    }
+        
+    
 }
+
+//gen random number function
+
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
+function safeNumber(){
+    const contents = []
+    while(contents.length == selezione.value){
+        const safe = selezione.value - genBomb()
+    } if(contents !== genBomb()){
+        contents.push(safe)
+    }
+    return contents
+}
+
+console.log(safeNumber())
+
+  
+// generatore di bombe (numeri casuali)
+  function genBomb(){
+    const failedBomb = []
+    while (failedBomb.length !== 16){
+        const failedBombs = getRandomInteger(1,16)
+        if(!failedBomb.includes(failedBombs)){
+            failedBomb.push(failedBombs)
+        }
+    }   
+    return failedBomb
+    
+}
+console.log(genBomb())
+
+
