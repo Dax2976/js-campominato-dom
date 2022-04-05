@@ -1,0 +1,89 @@
+/* common rules */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/**/
+/* header e footer */
+.site_header{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
+}
+
+footer{
+   padding: 20px 0;
+    margin: auto;
+    width: 85%;
+}
+/**/
+/* styling page rules */
+.logo_left{
+    display: flex;
+    align-items: center;
+}
+
+.menu_right{
+    display: flex;
+    align-items: center;
+}
+
+.logo{
+    width: 100px;
+}
+
+#btn{
+    padding: 0 20px;
+    margin: 10px;
+}
+
+#btnReset{
+    padding: 0 20px;
+    margin: 5px;
+}   
+
+.site_main{
+    background-color: aquamarine;
+    padding: 100px 0;
+}
+#grid{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    height: 70vh;
+    width: 70vh;
+}
+/**/
+
+/* this rules implemented by function on main.js */
+.bgboxblue{
+    background-color: rgb(32, 143, 222);
+    color: white;
+}
+
+.diff_100{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.diff_81{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.diff_49{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
