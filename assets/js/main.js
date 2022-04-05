@@ -90,17 +90,17 @@ function genBomb(){
     return failedBomb
     
 }
-console.log(genBomb())
+//console.log(genBomb())
 
 
 
 
 // funzione per colorare le celle al click
 function colorCell(){
-    console.log(this.innerText);
-    console.log(arrayBomb)
-    console.log(arrayBomb.includes(this.innerText));
-    if(arrayBomb.includes(this.innerHTML)){
+    //console.log(this.innerText);
+    //console.log(arrayBomb)
+    //console.log(arrayBomb.includes(this.innerText));
+    if(arrayBomb.includes(parseInt(this.innerHTML))){
         this.classList.add('bgboxred')
         alert(`hai preso una bomba il tuo punteggio è : ${score}`)
     } else {
