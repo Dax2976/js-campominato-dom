@@ -82,7 +82,7 @@ function createCell(){
 function genBomb(){
     const failedBomb = []
     while (failedBomb.length !== 16){
-        const failedBombs = getRandomInteger(1,16)
+        const failedBombs = getRandomInteger(1,selezione.value)
         if(!failedBomb.includes(failedBombs)){
             failedBomb.push(failedBombs)
         }
@@ -97,12 +97,12 @@ console.log(genBomb())
 
 // funzione per colorare le celle al click
 function colorCell(){
-    if(window.top !== arrayBomb){
+    if(this !== arrayBomb){
         this.classList.add('bgboxblue')
         score++
         this.style.pointerEvent = 'none'
         console.log(score)
-    }else if (!content == arrayBomb){
+    }else if (!this == arrayBomb){
         this.classList.add('bgboxred')
         alert(`hai preso una bomba il tuo punteggio è : ${score}`)
     }
