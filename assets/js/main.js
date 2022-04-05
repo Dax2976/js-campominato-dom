@@ -67,7 +67,7 @@ function createCell(){
         let content = document.createElement('div')
         content.classList.add('diff_' + selezione.value)
         grid.appendChild(content)
-        content.addEventListener('click', colorCell)
+        content.addEventListener('click',colorCell)
         content.innerHTML = i
        
     } 
@@ -100,16 +100,18 @@ function colorCell(){
     console.log(this.innerText);
     console.log(arrayBomb)
     console.log(arrayBomb.includes(this.innerText));
-    if(arrayBomb.includes(this.innerText)){
-        this.classList.add('bgboxblue')
-        score++
-        this.style.pointerEvent = 'none'
-        console.log(score)
-    }else{
+    if(arrayBomb.includes(this.innerHTML)){
         this.classList.add('bgboxred')
         alert(`hai preso una bomba il tuo punteggio è : ${score}`)
+    } else {
+        this.classList.add('bgboxblue')
+        score++
+        console.log(score)
+    
     }
 }
+
+
 
 //gen random number function
 
@@ -117,7 +119,9 @@ function getRandomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-
+if(score == selezione.value - 16){
+    alert(`Hai cliccato tutti i numeri e non hai preso neanche una bomba BRAVISSIMO il tuo punteggio è :  ${score}`)
+}
 
 
 // for(x = 1; x<= celle; x++ ){
