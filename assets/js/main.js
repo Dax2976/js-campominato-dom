@@ -68,7 +68,7 @@ function createCell(){
         content.classList.add('diff_' + selezione.value)
         grid.appendChild(content)
         content.addEventListener('click', colorCell)
-        content.innerHTML = i , arrayBomb
+        content.innerHTML = i
        
     } 
 }
@@ -97,20 +97,16 @@ console.log(genBomb())
 
 // funzione per colorare le celle al click
 function colorCell(){
-    if(this !== arrayBomb){
+    console.log(this);
+    if(arrayBomb != this){
         this.classList.add('bgboxblue')
         score++
         this.style.pointerEvent = 'none'
         console.log(score)
-    }else if (!this == arrayBomb){
+    }else if (arrayBomb.includes(this.innerText)){
         this.classList.add('bgboxred')
         alert(`hai preso una bomba il tuo punteggio è : ${score}`)
     }
-       
-    
-   
-        
-    
 }
 
 //gen random number function
@@ -121,10 +117,11 @@ function getRandomInteger(min, max) {
 
 
 
-for(x = 1; x<= celle; x++ ){
-    safeNumber.push(x)
-}
-console.log(safeNumber)
+
+// for(x = 1; x<= celle; x++ ){
+//     safeNumber.push(x)
+// }
+// console.log(safeNumber)
 
 
 
@@ -141,4 +138,3 @@ console.log(safeNumber)
 
 // console.log(safeNumber())
 
-  
